@@ -11,6 +11,7 @@
 
   <body>
     <nav>
+    {{ partial "logo_custom.html" . }}
     <ul class="menu">
       {{ range .Site.Menus.main }}
       <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
