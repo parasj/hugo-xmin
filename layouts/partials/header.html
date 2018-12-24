@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    {{ if (isset .Title "Home") }}
+    {{ if isset .Site.Params "seotitle" }}
+        <title>{{ .Site.Params.Seotitle }}</title>
+    {{ else if eq .Title "Home" }}
         <title>{{ .Site.Title }}</title>
     {{ else }}
         <title>{{ .Title }} | {{ .Site.Title }}</title>
